@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucas Fialho - LUV-001 PORTFOLIO EDITION</title>
+
+<!-- lembrete pra mim: trocar "SEU NOME" (tem 2 ocorrências), os projetos ficam em #faixas,
+     as skills em #especificacoes, e os placeholders de imagem viram <img> com a mesma classe -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- menu / barra do player -->
+<header class="barra-player">
+  <div class="visor">
+    <span class="ponto-rec"></span>
+    <span id="now-playing">01 · INÍCIO</span>
+  </div>
+  <nav id="site-nav">
+    <a href="#inicio" class="ativo">01 INÍCIO</a>
+    <a href="#faixas">02 FAIXAS</a>
+    <a href="#especificacoes">03 ESPECIFICAÇÕES</a>
+    <a href="#sobre">04 SOBRE</a>
+    <a href="#contato">05 CONTATO</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- topo / capa -->
+  <section id="inicio" class="capa">
+    <div class="moldura-disco">
+      <svg class="disco" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="metal" cx="38%" cy="32%" r="75%">
+            <stop offset="0%" stop-color="#eef4fb"/>
+            <stop offset="30%" stop-color="#c3d3e6"/>
+            <stop offset="60%" stop-color="#7f93ab"/>
+            <stop offset="100%" stop-color="#384258"/>
+          </radialGradient>
+          <!-- gradiente do feixe diagonal, branco com um leve toque de roxo -->
+          <linearGradient id="rainbowBand" x1="108" y1="0" x2="288" y2="400" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+            <stop offset="30%" stop-color="#ffffff" stop-opacity="0.4"/>
+            <stop offset="50%" stop-color="#c9a8ff" stop-opacity="0.45"/>
+            <stop offset="70%" stop-color="#ffffff" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"/>
+          </linearGradient>
+          <filter id="softBlur" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="4"/>
+          </filter>
+          <clipPath id="discClip">
+            <circle cx="200" cy="200" r="196"/>
+          </clipPath>
+        </defs>
+
+        <!-- corpo reflexivo do CD -->
+        <circle cx="200" cy="200" r="196" fill="url(#metal)" stroke="#241a3a" stroke-width="1"/>
+
+        <g clip-path="url(#discClip)">
+          <!-- feixe de luz diagonal (parte de cima), afinando em direção ao centro -->
+          <polygon points="28,0 188,0 203,200 193,200" fill="url(#rainbowBand)" filter="url(#softBlur)"/>
+          <!-- feixe de luz diagonal (parte de baixo), alargando a partir do centro -->
+          <polygon points="193,200 203,200 368,400 208,400" fill="url(#rainbowBand)" filter="url(#softBlur)"/>
+          <!-- borda sutil entre a área de dados e a etiqueta -->
+          <circle cx="200" cy="200" r="112" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="1"/>
+        </g>
+
+        <!-- etiqueta central -->
+        <circle cx="200" cy="200" r="76" fill="#0e0a17" stroke="#241a3a" stroke-width="1"/>
+        <circle cx="200" cy="200" r="76" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="6"/>
+        <text x="200" y="197" text-anchor="middle" font-family="Fraunces, serif" font-size="30" fill="#dbe3ee" letter-spacing="1">LUVAS</text>
+        <text x="200" y="215" text-anchor="middle" font-family="Source Serif 4, serif" font-size="15" fill="#7c8aa5" letter-spacing="2">LUV · 2026</text>
+
+        <!-- furo do eixo -->
+        <circle cx="200" cy="200" r="13" fill="#050308" stroke="#241a3a" stroke-width="1"/>
+      </svg>
+    </div>
+
+    <div class="texto-capa">
+      <p class="catalogo">MUS. Nº LUV‑001 · PORTFOLIO EDITION</p>
+      <h1>LUCAS<span>Estudante de sistemas de informação</span></h1>
+      <p class="introducao">Pode me chamar de Luvas, eu amo música, jogos e livros. E fico muito feliz por você adquirir o EP do meu portfolio de projetos! Confira as faixas do EP: </p>
+      <div class="controles">
+        <a href="#faixas" class="primario">▶ Tocar</a>
+        <a href="#contato">⏏ Ejetar</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divisoria" aria-hidden="true"></div>
+
+  <!-- lista de projetos (faixas) -->
+  <section id="faixas">
+    <h2 class="titulo-secao">FAIXAS DO PROJETO</h2>
+
+    <ul class="lista-faixas">
+
+      <li class="faixa">
+        <details>
+          <summary>
+            <span class="numero-faixa">01</span>
+            <span class="titulo-faixa"><span class="mini-disco"></span>Jogo de Labirinto</span>
+            <span class="tags-faixa"><span>Python</span></span>
+            <span class="ano-faixa">2026</span>
+          </summary>
+          <div class="corpo-faixa">
+            Um projeto de faculdade, um jogo feito em python, com a geração de mapas e itens aleatórios usando a biblioteca random.
+            <br><a class="link-repo" href="https://github.com/lucasfialhok/maze-game" target="_blank" rel="noopener noreferrer">Ver repositório →</a>
+          </div>
+        </details>
+      </li>
+
+      <li class="faixa">
+        <details>
+          <summary>
+            <span class="numero-faixa">02</span>
+            <span class="titulo-faixa"><span class="mini-disco"></span>MP3 Player</span>
+            <span class="tags-faixa"><span>Python</span></span>
+            <span class="ano-faixa">2026</span>
+          </summary>
+          <div class="corpo-faixa">
+            Aplicação simples feita no meu tempo livre, com a capacidade de ler o arquivo MP3 inserido na pasta, exibir qual faixa está sendo tocada e a lista de arquivos.
+            <br><a class="link-repo" href="https://github.com/lucasfialhok/mp3-player" target="_blank" rel="noopener noreferrer">Ver repositório →</a>
+          </div>
+        </details>
+      </li>
+
+      <li class="faixa">
+        <details>
+          <summary>
+            <span class="numero-faixa">03</span>
+            <span class="titulo-faixa"><span class="mini-disco"></span>Mini Jogo em Godot</span>
+            <span class="tags-faixa"><span>GDscript</span></span>
+            <span class="ano-faixa">2025</span>
+          </summary>
+          <div class="corpo-faixa">
+            Jogo simples de fase única feito na Godot Engine, como teste da ferramenta. Feito usando assets públicos.
+            <br><a class="link-repo" href="https://github.com/lucasfialhok/platformer2D" target="_blank" rel="noopener noreferrer">Ver repositório →</a>
+          </div>
+        </details>
+      </li>
+
+      <li class="faixa">
+        <details>
+          <summary>
+            <span class="numero-faixa">04</span>
+            <span class="titulo-faixa"><span class="mini-disco"></span>Mini jogo de RPG - DEMO</span>
+            <span class="tags-faixa"><span>Java</span></span>
+            <span class="ano-faixa">2026</span>
+          </summary>
+          <div class="corpo-faixa">
+            (WIP) jogo de RPG feito em Java como treino da linguagem, desenvolvido no meu tempo livre.
+            <br><a class="link-repo" href="https://github.com/lucasfialhok/RPG-Mini-Game" target="_blank" rel="noopener noreferrer">Ver repositório →</a>
+          </div>
+        </details>
+      </li>
+    </ul>
+  </section>
+
+  <div class="divisoria" aria-hidden="true"></div>
+
+  <!-- skills -->
+  <section id="especificacoes">
+    <h2 class="titulo-secao">ESPECIFICAÇÕES TÉCNICAS</h2>
+
+    <div class="grade-especificacoes">
+      <div class="grupo-especificacao">
+        <div class="cabecalho-especificacao">
+          <h3>FERRAMENTAS QUE UTILIZO</h3>
+        </div>
+        <div class="blocos-ferramentas">
+          <span>Python</span>
+          <span>Java</span>
+          <span>GDscript</span>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Git</span>
+          <span>JS</span>
+        </div>
+      </div>
+
+      <div class="grupo-especificacao">
+        <div class="cabecalho-especificacao">
+          <h3>SOFT SKILLS</h3>
+        </div>
+        <div class="tags-habilidades">
+          <span>Aprendizado Rápido</span>
+          <span>Trabalho em equipe</span>
+          <span>Adaptabilidade</span>
+          <span>Criativo</span>
+          <span>Proatividade</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divisoria" aria-hidden="true"></div>
+
+  <!-- sobre mim -->
+  <section id="sobre">
+    <h2 class="titulo-secao">NOTAS DO ENCARTE</h2>
+    <div class="layout-encarte">
+      <div class="encarte">
+        <p><strong>Me chamo LUCAS FIALHO</strong>, estudante de BSI na PUCPR desde o início de 2026. Tendo cursado Design anteriormente, também na PUCPR.</p>
+        <p>Comecei a programar pela vontade de criar algo diretamente interativo, logo me apaixonei e agora sempre me vejo inventando algo novo para mexer. Neste site, juntei algumas de minhas paixões para criar uma identidade mais única.</p>
+        <p>Estou sempre atrás de novas coisas para criar, e sempre muito curioso e disposto a aprender.</p>
+      </div>
+      <aside class="encarte-lateral">
+        <img class="foto-sobre" src="assets/luvas.jpeg" alt="Foto de Lucas Fialho">
+        <span class="mini-disco"></span>
+        <h4>FICHA TÉCNICA</h4>
+        <p>Produzido em [CURITIBA - PR - BRASIL]  lançamento [2026]</p>
+      </aside>
+    </div>
+  </section>
+
+  <div class="divisoria" aria-hidden="true"></div>
+
+  <!-- contato -->
+  <section id="contato" class="secao-contato">
+    <div class="layout-contato">
+      <div class="intro-contato">
+        <div class="eixo"><span></span></div>
+        <h2 class="titulo-contato">Álbum completo em breve!</h2>
+        <p>Contato da gravadora: </p>
+        <div class="codigo-barras"></div>
+      </div>
+      <nav class="links-contato">
+        <a href="mailto:seuemail@exemplo.com" target="_blank" rel="noopener noreferrer">lucaskfialho@gmail.com</a>
+        <a href="https://github.com/lucasfialhok" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  LUV‑001 · LUCAS FIALHO · gravado em HTML, CSS &amp; JS · 2026
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
