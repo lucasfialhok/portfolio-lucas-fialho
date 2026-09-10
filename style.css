@@ -672,16 +672,17 @@ img.foto-sobre {
 
 /* ================= CONTACT / BACK COVER ================= */
 .layout-contato {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 56px;
-  align-items: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  max-width: 44ch;
 }
 
-.intro-contato .eixo {
+.layout-contato .eixo {
   width: 56px;
   height: 56px;
-  margin: 0 0 26px;
+  margin-bottom: 8px;
   border-radius: 50%;
   border: 1px solid var(--case-line);
   display: flex;
@@ -697,55 +698,42 @@ img.foto-sobre {
   border: 1px solid var(--silver-dim);
 }
 
-.intro-contato h2.titulo-contato {
+.layout-contato h2.titulo-contato {
   font-size: clamp(33px,4.7vw,50px);
-  margin-bottom: 16px;
   max-width: 12ch;
 }
 
-.intro-contato p {
+.info-contato {
   color: var(--ink-dim);
-  max-width: 38ch;
   font-size: 16.5px;
 }
 
-.links-contato {
+.stack-contato {
   display: flex;
   flex-direction: column;
-  gap: 0;
-  border-top: 1px solid var(--case-line);
+  gap: 6px;
 }
 
-.links-contato a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 15.3px;
-  padding: 16px 2px;
+.stack-contato a {
+  color: var(--ink);
+  font-size: 16.5px;
+  width: fit-content;
   border-bottom: 1px solid var(--case-line);
+  padding-bottom: 1px;
+  transition: color .15s ease, border-color .15s ease;
 }
 
-.links-contato a::after {
-  content: "→";
-  color: var(--silver-dim);
-}
-
-.links-contato a:hover {
+.stack-contato a:hover {
   color: var(--holo-c);
+  border-color: var(--holo-c);
 }
 
 .codigo-barras {
-  margin: 64px 0 0;
+  margin-top: 26px;
   width: 160px;
   height: 30px;
   background: repeating-linear-gradient(90deg, var(--silver-dim) 0 2px, transparent 2px 5px);
   opacity: 0.4;
-}
-
-@media (max-width: 760px) {
-  .layout-contato {
-    grid-template-columns: 1fr;
-  }
 }
 
 footer {
